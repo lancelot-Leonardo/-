@@ -1,0 +1,276 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #00B7FF;
+}
+body.add {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+body.add > form {
+  width: 50%;
+  height: 75vh;
+}
+body.add > form > div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+body.add > form > div.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body.add > form > div.input > div.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 20px;
+}
+body.add > form > div.input > div.item > input,
+body.add > form > div.input > div.item select {
+  height: 50px;
+  font-size: 20px;
+}
+body.add > form > div.input > div.item > textarea {
+  height: 100px;
+  font-size: 20px;
+  resize: none;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+body.add > form > button {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #cceeff;
+  box-shadow: none;
+}
+body.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  overflow: auto;
+}
+body.list > div {
+  width: 45%;
+}
+body.list > main {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+body.list > main > div.item {
+  height: 90px;
+  border: 1px solid #f2eff0;
+  border-radius: 4px;
+}
+body.list > main > div.item > div.top {
+  height: 40px;
+  line-height: 40px;
+  background-color: #f2ddde;
+  overflow: hidden;
+}
+body.list > main > div.item > div.top > span {
+  margin-left: 20px;
+}
+body.list > main > div.item > div.bottom {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body.list > main > div.item > div.bottom > div {
+  background-color: #eeac4e;
+  border-radius: 5px;
+  padding: 5px;
+  transform: translateX(60px);
+}
+/* 通用：占满视口 + 让 Flex 布局居中 */
+body.login,
+body.register {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow: hidden;
+}
+body.login *,
+body.register * {
+  box-sizing: border-box;
+}
+/* 登录 / 注册卡片共有样式 */
+.auth-card {
+  width: 440px;
+  padding: 40px 32px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+.auth-card h2 {
+  margin: 0 0 24px;
+  color: #333;
+}
+.auth-card input {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 16px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+.auth-card button {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+/* 分别给按钮配色 */
+body.login button {
+  background: #007BFF;
+}
+body.login button:hover {
+  background: #006ce0;
+}
+body.register button {
+  background: #28a745;
+}
+body.register button:hover {
+  background: #228e3b;
+}
+#alert-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+.alert {
+  display: none;
+  padding: 12px 20px;
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  color: #333;
+  background-color: #f5f5f5;
+}
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d0e9c6;
+  color: #3c763d;
+}
+.alert-danger {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+.alert-info {
+  background-color: #d9edf7;
+  border-color: #bcdff1;
+  color: #31708f;
+}
+.alert-warning {
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
+.alert .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+/* Header布局 */
+.header {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.header button#logout-btn {
+  padding: 8px 16px;
+  background-color: #ff5e5e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.header button#logout-btn:hover {
+  background-color: #e04c4c;
+}
+/* 模态框样式 */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.modal-content {
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+}
+.modal-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.modal-buttons button {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#confirm-logout {
+  background-color: #007BFF;
+  color: #fff;
+}
+#confirm-logout:hover {
+  background-color: #0062cc;
+}
+#cancel-logout {
+  background-color: #ccc;
+  color: #333;
+}
+#cancel-logout:hover {
+  background-color: #999;
+}
